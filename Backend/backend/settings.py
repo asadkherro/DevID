@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-o806%hc+e4)p8%=(9@z5h%oz0t10lhs$^e+rq(txcckpsan71s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "rest_framework",
-    "scan"
+    "scan",
+    "dashboard"
 ]
 
 MIDDLEWARE = [
@@ -134,4 +135,4 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-ALLOWED_HOSTS = ['172.22.21.166' , "0.0.0.0" , "192.168.1.106"]
+ALLOWED_HOSTS = ['172.22.21.166' , "0.0.0.0" , "192.168.1.106" , "127.0.0.1"]
