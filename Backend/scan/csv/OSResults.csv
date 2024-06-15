@@ -1,7 +1,0 @@
-Ip,Mac,RunningDevice,OsCpe,OsDetails,OsGuesses
-192.168.1.1,58:D9:D5:A1:3C:90,general purpose,: Wind River VxWorks,cpe:/o:windriver:vxworks,VxWorks,Unmatched
-192.168.1.100,18:E2:9F:B0:0A:2D,phone|general purpose|WAP,"(JUST GUESSING): Google Android 7.X|6.X|5.X (97%), Linux 3.X|4.X|2.6.X (96%), Asus embedded (95%)",cpe:/o:google:android:7 cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4 cpe:/o:google:android:6 cpe:/o:linux:linux_kernel:2.6.32 cpe:/h:asus:rt-n56u cpe:/o:linux:linux_kernel:3.4 cpe:/o:google:android:5,Unmatched,"Android 7.1.1 - 7.1.2 (97%), Linux 3.2 - 3.16 (96%), Linux 3.2 - 4.9 (96%), Android 6.0 - 7.1.2 (Linux 3.18 - 4.4.1) (96%), Linux 2.6.32 (95%), ASUS RT-N56U WAP (Linux 3.4) (95%), Linux 3.16 (95%), Linux 2.6.32 - 3.10 (95%), Android 5.0 - 7.0 (Linux 3.4 - 3.10) (94%), Sony Android TV (Android 5.0) (93%)"
-192.168.1.101,3C:D9:2B:76:C8:F1,general purpose,(JUST GUESSING): Microsoft Windows XP (85%),cpe:/o:microsoft:windows_xp::sp3,Unmatched,Microsoft Windows XP SP3 (85%)
-192.168.1.103,BE:93:D8:76:4A:7E,Unmatched,Unmatched,Unmatched,Unmatched,Unmatched
-192.168.1.105,60:67:20:D6:DB:5C,general purpose,(JUST GUESSING): Microsoft Windows 2019|10|XP (91%),cpe:/o:microsoft:windows_10 cpe:/o:microsoft:windows_xp::sp3,Unmatched,"Microsoft Windows Server 2019 (91%), Microsoft Windows 10 1909 (90%), Microsoft Windows XP SP3 (85%), Microsoft Windows XP SP2 (85%)"
-192.168.1.106,Unmatched,general purpose,: Linux 2.6.X,cpe:/o:linux:linux_kernel:2.6.32,Linux 2.6.32,Unmatched
