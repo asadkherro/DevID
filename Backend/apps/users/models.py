@@ -1,4 +1,3 @@
-import uuid
 import string
 import random
 import time
@@ -36,6 +35,7 @@ class OTP(TimeStampedModel):
             if current_time - start_time >= 15:
                 raise TimeoutError("Timeout occurred while generating OTP code")
         return code
+
     @classmethod
     def create_otp(cls, user):
         code = cls.generate_code()

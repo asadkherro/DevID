@@ -11,9 +11,10 @@ class LoginSerializer(serializers.Serializer):
             user = User.objects.get(email=value)
             send_otp(user=user)
             return value
-        raise serializers.ValidationError("Email doesnot exists")
+        raise serializers.ValidationError("Invalid Email Address")
 
 
 
 class VerifyOTPSerializer(serializers.Serializer):
+    email = serializers.EmailField()
     otp = serializers.CharField(max_length=6)

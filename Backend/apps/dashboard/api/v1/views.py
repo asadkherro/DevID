@@ -7,5 +7,5 @@ class DashboardPieChartView(APIView):
     permission_classes = [permissions.AllowAny]
 
     def get(self, request):
-        datapoints = get_device_datapoints_from_csv('scan\csv\IoTData.csv')
+        datapoints = get_device_datapoints_from_csv('apps\scan\csv\IoTData.csv')
         return Response({"datapoints": datapoints}, status=status.HTTP_200_OK)
