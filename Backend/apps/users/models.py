@@ -15,6 +15,9 @@ class OTP(TimeStampedModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     code = models.CharField(max_length=6 , unique=True)
 
+    class Meta:
+        unique_together = ('user', 'code',)
+        
     def __str__(self):
         return f"{self.user.email}-{self.code}"
 
@@ -24,12 +27,12 @@ class OTP(TimeStampedModel):
         return timezone.now() > expiration_time
 
     @staticmethod
-    def generate_code():
+    def generate_code(user:User):
         characters = string.digits + string.ascii_lowercase
         start_time = time.time()
         while True:
             code = "".join(random.choices(characters, k=6))
-            if not OTP.objects.filter(code=code).exists():
+            if not OTP.objects.filter(user=user , code=code).exists():
                 break
             current_time = time.time()
             if current_time - start_time >= 15:
@@ -38,5 +41,5 @@ class OTP(TimeStampedModel):
 
     @classmethod
     def create_otp(cls, user):
-        code = cls.generate_code()
+        code = cls.generate_code(user=user)
         return cls.objects.create(user=user, code=code)

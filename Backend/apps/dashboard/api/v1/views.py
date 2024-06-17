@@ -4,7 +4,7 @@ from rest_framework import status , permissions
 from apps.dashboard.utils import get_device_datapoints_from_csv
 
 class DashboardPieChartView(APIView):
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
         datapoints = get_device_datapoints_from_csv('apps\scan\csv\IoTData.csv')
