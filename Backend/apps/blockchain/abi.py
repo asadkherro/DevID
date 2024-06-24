@@ -1,0 +1,19 @@
+contract_abi = [
+    {
+        "inputs": [
+            {"internalType": "string", "name": "key", "type": "string"},
+            {"internalType": "string", "name": "value", "type": "string"},
+        ],
+        "name": "saveData",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function",
+    },
+    {
+        "inputs": [{"internalType": "string", "name": "key", "type": "string"}],
+        "name": "getData",
+        "outputs": [{"internalType": "string", "name": "", "type": "string"}],
+        "stateMutability": "view",
+        "type": "function",
+    },
+]

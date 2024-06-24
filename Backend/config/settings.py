@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "apps.ai",
     "apps.users",
     "apps.core",
+    "apps.blockchain"
 ]
 
 MIDDLEWARE = [
@@ -163,3 +164,11 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'devidcsit0949@gmail.com'
 EMAIL_HOST_PASSWORD = 'momx rkcc uruj jrke'
+
+
+
+# Blockchain settings
+GANACHE_URL = "http://127.0.0.1:7545"
+CHAIN_ID = 1337
+MY_ADDRESS = "0xAfDc1381eC2AC5d3b12392681Bfdf94BAb985e5E"
+PRIVATE_KEY = "0x3f7cc992bf4d6240d2c5daf15ed50b6d0be7fe6975fe50e966f0e1ba8e0ec828"

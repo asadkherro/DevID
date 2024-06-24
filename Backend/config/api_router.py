@@ -12,4 +12,5 @@ urlpatterns = [
     path("v1/", include("apps.ai.api.v1.urls")),
     path("v1/", include("apps.dashboard.api.v1.urls")),
     path("v1/", include("apps.users.api.v1.urls")),
+    path("v1/", include("apps.blockchain.api.v1.urls")),
 ] + router.urls
