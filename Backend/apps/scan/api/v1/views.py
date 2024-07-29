@@ -135,17 +135,20 @@ class CurrentDeviceView(APIView):
 
     def get(self, request):
         try:
-            print("===== GOT HIT ======")
             script_path = "apps/scan/scripts/GetCurrentDevice.sh"
-            subnet = run_bash_script(script_path)
-            print("===== GET IP DONE =====")
-            print(subnet)
-            output = run_bash_script(script_path, subnet)
-            print("===== OUTPUT DONE ======")
-            print(output)
-            return Response({"output": "done"}, status=status.HTTP_200_OK)
+            output = run_bash_script(script_path)
+
+            # Parse the output to create a dictionary
+            output_lines = output.split('\n')
+            output_dict = {}
+            for line in output_lines:
+                if line:
+                    key, value = line.split(': ', 1)
+                    output_dict[key.strip()] = value.strip()
+
+            return Response({"status": "success", "data": output_dict}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response(
-                {"error": f"Error Occured: {e}"},
+                {"status": "failure", "message": f"Error Occurred: {e}"},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR,
             )

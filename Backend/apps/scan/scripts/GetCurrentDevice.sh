@@ -9,9 +9,19 @@ kernel_name=$(hostnamectl | grep "Kernel" | awk -F: '{print $2}' | xargs)
 
 # Get the subnet using provided code
 interface=${1:-"eth0"}
-scanFlags=${2:-"-n -sn"}
+
+# Check if interface exists and has an IP address
+if ! ip addr show $interface > /dev/null 2>&1; then
+    echo "Error: Interface $interface does not exist."
+    exit 1
+fi
 
 fullAddr=$(ip addr show $interface | grep -w inet | awk '{print $2}')
+if [ -z "$fullAddr" ]; then
+    echo "Error: No IP address found for interface $interface."
+    exit 1
+fi
+
 machineAddr=$(awk -F / '{print $1}' <<< $fullAddr)
 subnetSize=$(awk -F / '{print $2}' <<< $fullAddr)
 

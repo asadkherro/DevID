@@ -153,7 +153,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-ALLOWED_HOSTS = ['172.22.21.166' , "0.0.0.0" , "192.168.1.106" , "127.0.0.1"]
+ALLOWED_HOSTS = ['172.22.21.166' , "0.0.0.0" , "192.168.1.106" , "127.0.0.1" , "192.168.1.102"]
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 # AUTH_USER_MODEL = 'users.User'
