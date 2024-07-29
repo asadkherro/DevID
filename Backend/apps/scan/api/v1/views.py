@@ -128,3 +128,24 @@ class OsScanView(APIView):
                 {"error": f"Error Occured: {e}"},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR,
             )
+        
+
+class CurrentDeviceView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request):
+        try:
+            print("===== GOT HIT ======")
+            script_path = "apps/scan/scripts/GetCurrentDevice.sh"
+            subnet = run_bash_script(script_path)
+            print("===== GET IP DONE =====")
+            print(subnet)
+            output = run_bash_script(script_path, subnet)
+            print("===== OUTPUT DONE ======")
+            print(output)
+            return Response({"output": "done"}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response(
+                {"error": f"Error Occured: {e}"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            )
