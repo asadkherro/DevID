@@ -34,7 +34,7 @@ def parse_output_normal(output):
     
 def writeToCSV_Normal(ips, macs, names):
     data = zip(ips, macs, names)
-    csvFile = "scan/csv/NormalResults.csv"
+    csvFile = "apps/scan/csv/NormalResults.csv"
     with open(csvFile, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Ip", "Mac", "Device names"])
@@ -89,7 +89,7 @@ def parse_output_os(output):
 
 def WriteToCSV_OS(Ip , Mac , DeviceType , RunningDevice, OsCpe, OsDetails, OsGuesses):
     data = zip(Ip , Mac ,DeviceType , RunningDevice, OsCpe, OsDetails, OsGuesses)
-    csvFile = "scan/csv/OSResults.csv"
+    csvFile = "apps/scan/csv/OSResults.csv"
     with open(csvFile, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Ip", "Mac", "RunningDevice", "OsCpe", "OsDetails", "OsGuesses"])

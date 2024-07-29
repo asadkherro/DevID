@@ -18,7 +18,7 @@ class SubnetScanView(APIView):
 
     def get(self, request):
         # Command to run the Bash script with the 'eth0' argument
-        command = ["bash", "scan/InitialNetwork.sh", "eth0"]
+        command = ["bash", "apps/scan/InitialNetwork.sh", "eth0"]
 
         # Run the command and capture the output
         process = subprocess.Popen(
@@ -54,7 +54,7 @@ class PythonScanView(APIView):
 
     def get(self, request):
         try:
-            script_path = "scan/scripts/InitialNetwork.sh"
+            script_path = "apps/scan/scripts/InitialNetwork.sh"
             arguments = ["eth0"]
             command = ["sudo", "bash", script_path] + arguments
             process = subprocess.Popen(
@@ -94,8 +94,8 @@ class OsScanView(APIView):
     def get(self, request):
         try:
             print("===== GOT HIT ======")
-            ip_script_path = "scan/scripts/get_Ip.sh"
-            nmap_script_path = "scan/scripts/script3.sh"
+            ip_script_path = "apps/scan/scripts/get_Ip.sh"
+            nmap_script_path = "apps/scan/scripts/script3.sh"
             subnet = run_bash_script(ip_script_path)
             print("===== GET IP DONE =====")
             print(subnet)
