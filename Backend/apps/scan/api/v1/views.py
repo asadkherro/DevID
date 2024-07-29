@@ -1,8 +1,9 @@
 import subprocess
+from django.utils.text import slugify
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, permissions
-
 
 from apps.scan.utils import (
     parse_output_normal,
@@ -144,7 +145,7 @@ class CurrentDeviceView(APIView):
             for line in output_lines:
                 if line:
                     key, value = line.split(': ', 1)
-                    output_dict[key.strip()] = value.strip()
+                    output_dict[(slugify(key.strip())).replace('-' , '_')] = value.strip()
 
             return Response({"status": "success", "data": output_dict}, status=status.HTTP_200_OK)
         except Exception as e:
