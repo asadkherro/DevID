@@ -3,7 +3,9 @@ import json
 from solcx import compile_standard
 from web3 import Web3
 from django.conf import settings
+import solcx
 
+solcx.install_solc('0.8.0')
 web3 = Web3(Web3.HTTPProvider(settings.GANACHE_URL))
 chain_id = settings.CHAIN_ID
 my_address = settings.MY_ADDRESS
